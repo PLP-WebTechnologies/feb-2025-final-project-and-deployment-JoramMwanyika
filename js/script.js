@@ -227,23 +227,53 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Reveal animations on scroll
-  const revealElements = document.querySelectorAll(
-    ".about-content, .room-card, .dining-content, .gallery-item, .info-card",
-  )
+  // Theme Toggle Functionality
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const themeToggleIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
 
-  function revealOnScroll() {
-    for (let i = 0; i < revealElements.length; i++) {
-      const windowHeight = window.innerHeight
-      const elementTop = revealElements[i].getBoundingClientRect().top
-      const elementVisible = 150
-
-      if (elementTop < windowHeight - elementVisible) {
-        revealElements[i].classList.add("active")
+  function setTheme(theme) {
+    if (theme === 'dark') {
+      document.body.classList.add('dark-theme');
+      if (themeToggleIcon) {
+        themeToggleIcon.classList.remove('fa-moon');
+        themeToggleIcon.classList.add('fa-sun');
+      }
+    } else {
+      document.body.classList.remove('dark-theme');
+      if (themeToggleIcon) {
+        themeToggleIcon.classList.remove('fa-sun');
+        themeToggleIcon.classList.add('fa-moon');
       }
     }
+    localStorage.setItem('theme', theme);
   }
 
-  window.addEventListener("scroll", revealOnScroll)
-  revealOnScroll()
+  // Load theme from localStorage
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    setTheme('dark');
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const isDark = document.body.classList.contains('dark-theme');
+      setTheme(isDark ? 'light' : 'dark');
+    });
+  }
+
+  // Fade-in animation on scroll for sections and cards
+  function revealOnScroll() {
+    const revealEls = document.querySelectorAll('section, .room-card, .feature, .info-card, .testimonial, .menu-item-card');
+    const windowHeight = window.innerHeight;
+    revealEls.forEach(el => {
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 60) {
+        el.style.animationPlayState = 'running';
+      }
+    });
+  }
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
 })
