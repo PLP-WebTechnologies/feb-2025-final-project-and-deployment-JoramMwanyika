@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleHub - Cart</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="announcement-bar">
+    <div class="container">
+      <p>Free shipping on all orders over $100</p>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <h1>STYLEHUB</h1>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="shop.html">MEN</a></li>
+            <li><a href="shop.html">WOMEN</a></li>
+            <li><a href="shop.html">KIDS</a></li>
+            <li><a href="shop.html">COLLECTIONS</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+          <a href="cart.html" class="cart-icon active"><i class="fas fa-shopping-bag"></i><span id="cart-count">0</span></a>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Cart Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>YOUR CART</h1>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> / <span>Cart</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="cart">
+      <div class="container">
+        <div id="cart-empty" class="cart-empty">
+          <div class="empty-cart-icon">
+            <i class="fas fa-shopping-bag"></i>
+          </div>
+          <h2>YOUR CART IS EMPTY</h2>
+          <p>Looks like you haven't added any products to your cart yet.</p>
+          <a href="shop.html" class="btn btn-primary">CONTINUE SHOPPING</a>
+        </div>
+        
+        <div id="cart-content" class="cart-content">
+          <div class="cart-header">
+            <div class="cart-header-item product-col">PRODUCT</div>
+            <div class="cart-header-item price-col">PRICE</div>
+            <div class="cart-header-item quantity-col">QUANTITY</div>
+            <div class="cart-header-item total-col">TOTAL</div>
+          </div>
+          
+          <div id="cart-items" class="cart-items">
+            <!-- Cart items will be loaded here via JavaScript -->
+          </div>
+          
+          <div class="cart-actions">
+            <div class="coupon">
+              <input type="text" placeholder="Coupon code">
+              <button class="btn">APPLY</button>
+            </div>
+            <button id="update-cart" class="btn btn-outline">UPDATE CART</button>
+          </div>
+          
+          <div class="cart-summary">
+            <h3>CART TOTALS</h3>
+            <div class="summary-row">
+              <span>Subtotal:</span>
+              <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Shipping:</span>
+              <span>Free</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total:</span>
+              <span id="cart-total">$0.00</span>
+            </div>
+            <button id="checkout-btn" class="btn btn-primary">PROCEED TO CHECKOUT</button>
+            <a href="shop.html" class="continue-shopping">Continue Shopping</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- You May Also Like -->
+    <section class="related-products">
+      <div class="container">
+        <h2 class="section-title">YOU MAY ALSO LIKE</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="/placeholder.svg?height=400&width=400&text=Premium+Jacket" alt="Premium Jacket">
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Premium Tech Jacket</h3>
+              <p class="product-price">$129.99</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="/placeholder.svg?height=400&width=400&text=Tech+Hoodie" alt="Tech Hoodie">
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Tech Fleece Hoodie</h3>
+              <p class="product-price">$89.99</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="/placeholder.svg?height=400&width=400&text=Performance+Tee" alt="Performance Tee">
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Performance Tee</h3>
+              <p class="product-price">$49.99</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="/placeholder.svg?height=400&width=400&text=Cargo+Pants" alt="Cargo Pants">
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Urban Cargo Pants</h3>
+              <p class="product-price">$79.99</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>STYLEHUB</h3>
+          <p>Premium fashion for the modern individual.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>SHOP</h3>
+          <ul>
+            <li><a href="shop.html">Men</a></li>
+            <li><a href="shop.html">Women</a></li>
+            <li><a href="shop.html">Kids</a></li>
+            <li><a href="shop.html">Collections</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>HELP</h3>
+          <ul>
+            <li><a href="#">Customer Service</a></li>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Shipping Information</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>ABOUT</h3>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Corporate Responsibility</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 StyleHub. All rights reserved.</p>
+        <div class="payment-methods">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-amex"></i>
+          <i class="fab fa-cc-paypal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scroll-top" class="scroll-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

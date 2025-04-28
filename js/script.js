@@ -1,279 +1,56 @@
-// DOM Elements
-document.addEventListener("DOMContentLoaded", () => {
-  const header = document.getElementById("header")
-  const menuToggle = document.querySelector(".menu-toggle")
-  const navMenu = document.querySelector(".nav-menu")
-  const heroSlides = document.querySelectorAll(".hero-slide")
-  const heroDots = document.querySelectorAll(".hero-controls .dot")
-  const heroPrevBtn = document.querySelector(".hero-controls .prev-btn")
-  const heroNextBtn = document.querySelector(".hero-controls .next-btn")
-  const testimonials = document.querySelectorAll(".testimonial")
-  const testimonialDots = document.querySelectorAll(".testimonial-controls .dot")
-  const testimonialPrevBtn = document.querySelector(".testimonial-controls .prev-btn")
-  const testimonialNextBtn = document.querySelector(".testimonial-controls .next-btn")
-  const contactForm = document.getElementById("contact-form")
-  const newsletterForm = document.getElementById("newsletter-form")
+// Common JavaScript for all pages
 
-  // Header scroll effect
+// Mobile Navigation Toggle
+const hamburger = document.querySelector(".hamburger")
+const navLinks = document.querySelector(".nav-links")
+
+if (hamburger) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active")
+    navLinks.classList.toggle("active")
+  })
+}
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active")
+    navLinks.classList.remove("active")
+  })
+})
+
+// Scroll to Top Button
+const scrollTopBtn = document.getElementById("scroll-top")
+
+if (scrollTopBtn) {
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-      header.classList.add("scrolled")
+    if (window.pageYOffset > 300) {
+      scrollTopBtn.classList.add("show")
     } else {
-      header.classList.remove("scrolled")
+      scrollTopBtn.classList.remove("show")
     }
   })
 
-  // Mobile Menu Toggle
-  if (menuToggle) {
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("active")
-
-      // Toggle icon
-      const icon = menuToggle.querySelector("i")
-      if (navMenu.classList.contains("active")) {
-        icon.classList.remove("fa-bars")
-        icon.classList.add("fa-times")
-      } else {
-        icon.classList.remove("fa-times")
-        icon.classList.add("fa-bars")
-      }
-    })
-  }
-
-  // Close mobile menu when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest("nav") && navMenu && navMenu.classList.contains("active")) {
-      navMenu.classList.remove("active")
-      const icon = menuToggle.querySelector("i")
-      icon.classList.remove("fa-times")
-      icon.classList.add("fa-bars")
-    }
-  })
-
-  // Hero Slider
-  let currentHeroSlide = 0
-
-  function showHeroSlide(index) {
-    heroSlides.forEach((slide) => slide.classList.remove("active"))
-    heroDots.forEach((dot) => dot.classList.remove("active"))
-
-    heroSlides[index].classList.add("active")
-    heroDots[index].classList.add("active")
-    currentHeroSlide = index
-  }
-
-  // Next hero slide
-  function nextHeroSlide() {
-    currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length
-    showHeroSlide(currentHeroSlide)
-  }
-
-  // Previous hero slide
-  function prevHeroSlide() {
-    currentHeroSlide = (currentHeroSlide - 1 + heroSlides.length) % heroSlides.length
-    showHeroSlide(currentHeroSlide)
-  }
-
-  // Event listeners for hero slider controls
-  if (heroPrevBtn && heroNextBtn) {
-    heroPrevBtn.addEventListener("click", prevHeroSlide)
-    heroNextBtn.addEventListener("click", nextHeroSlide)
-
-    heroDots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        showHeroSlide(index)
-      })
-    })
-
-    // Auto slide hero
-    setInterval(nextHeroSlide, 5000)
-  }
-
-  // Testimonial Slider
-  let currentTestimonial = 0
-
-  function showTestimonial(index) {
-    testimonials.forEach((testimonial) => testimonial.classList.remove("active"))
-    testimonialDots.forEach((dot) => dot.classList.remove("active"))
-
-    testimonials[index].classList.add("active")
-    testimonialDots[index].classList.add("active")
-    currentTestimonial = index
-  }
-
-  // Next testimonial
-  function nextTestimonial() {
-    currentTestimonial = (currentTestimonial + 1) % testimonials.length
-    showTestimonial(currentTestimonial)
-  }
-
-  // Previous testimonial
-  function prevTestimonial() {
-    currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length
-    showTestimonial(currentTestimonial)
-  }
-
-  // Event listeners for testimonial controls
-  if (testimonialPrevBtn && testimonialNextBtn) {
-    testimonialPrevBtn.addEventListener("click", prevTestimonial)
-    testimonialNextBtn.addEventListener("click", nextTestimonial)
-
-    testimonialDots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        showTestimonial(index)
-      })
-    })
-
-    // Auto slide testimonials
-    setInterval(nextTestimonial, 7000)
-  }
-
-  // Form Validation
-  function validateEmail(email) {
-    const re =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return re.test(String(email).toLowerCase())
-  }
-
-  // Contact Form Validation
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault()
-
-      let isValid = true
-      const nameInput = document.getElementById("name")
-      const emailInput = document.getElementById("email")
-      const messageInput = document.getElementById("message")
-
-      // Validate name
-      if (nameInput.value.trim() === "") {
-        nameInput.style.borderColor = "red"
-        isValid = false
-      } else {
-        nameInput.style.borderColor = "#ddd"
-      }
-
-      // Validate email
-      if (!validateEmail(emailInput.value)) {
-        emailInput.style.borderColor = "red"
-        isValid = false
-      } else {
-        emailInput.style.borderColor = "#ddd"
-      }
-
-      // Validate message
-      if (messageInput.value.trim() === "") {
-        messageInput.style.borderColor = "red"
-        isValid = false
-      } else {
-        messageInput.style.borderColor = "#ddd"
-      }
-
-      if (isValid) {
-        // Simulate form submission
-        alert("Thank you for your message! We will get back to you soon.")
-        contactForm.reset()
-      } else {
-        alert("Please fill in all required fields correctly.")
-      }
-    })
-  }
-
-  // Newsletter Form Validation
-  if (newsletterForm) {
-    newsletterForm.addEventListener("submit", (e) => {
-      e.preventDefault()
-      const emailInput = newsletterForm.querySelector('input[type="email"]')
-
-      if (!validateEmail(emailInput.value)) {
-        emailInput.style.borderColor = "red"
-        alert("Please enter a valid email address")
-      } else {
-        emailInput.style.borderColor = "#ddd"
-        alert("Thank you for subscribing to our newsletter!")
-        newsletterForm.reset()
-      }
-    })
-  }
-
-  // Smooth scrolling for all anchor links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      if (this.getAttribute("href") === "#") return
-
-      e.preventDefault()
-
-      const targetId = this.getAttribute("href")
-      const targetElement = document.querySelector(targetId)
-
-      if (targetElement) {
-        const headerOffset = 80
-        const elementPosition = targetElement.getBoundingClientRect().top
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        })
-
-        // Close mobile menu if open
-        if (navMenu && navMenu.classList.contains("active")) {
-          navMenu.classList.remove("active")
-          const icon = menuToggle.querySelector("i")
-          icon.classList.remove("fa-times")
-          icon.classList.add("fa-bars")
-        }
-      }
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     })
   })
+}
 
-  // Theme Toggle Functionality
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const themeToggleIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
+// Update Cart Count
+function updateCartCount() {
+  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || []
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0)
+  const cartCountElements = document.querySelectorAll("#cart-count")
 
-  function setTheme(theme) {
-    if (theme === 'dark') {
-      document.body.classList.add('dark-theme');
-      if (themeToggleIcon) {
-        themeToggleIcon.classList.remove('fa-moon');
-        themeToggleIcon.classList.add('fa-sun');
-      }
-    } else {
-      document.body.classList.remove('dark-theme');
-      if (themeToggleIcon) {
-        themeToggleIcon.classList.remove('fa-sun');
-        themeToggleIcon.classList.add('fa-moon');
-      }
-    }
-    localStorage.setItem('theme', theme);
-  }
+  cartCountElements.forEach((element) => {
+    element.textContent = cartCount
+  })
+}
 
-  // Load theme from localStorage
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    setTheme(savedTheme);
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    setTheme('dark');
-  }
-
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      const isDark = document.body.classList.contains('dark-theme');
-      setTheme(isDark ? 'light' : 'dark');
-    });
-  }
-
-  // Fade-in animation on scroll for sections and cards
-  function revealOnScroll() {
-    const revealEls = document.querySelectorAll('section, .room-card, .feature, .info-card, .testimonial, .menu-item-card');
-    const windowHeight = window.innerHeight;
-    revealEls.forEach(el => {
-      const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 60) {
-        el.style.animationPlayState = 'running';
-      }
-    });
-  }
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll();
+// Call updateCartCount on page load
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartCount()
 })

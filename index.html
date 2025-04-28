@@ -1,577 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sunsail Hotel - Experience the magic of Lamu Island at our beautiful beachfront hotel with authentic Swahili architecture and cuisine.">
-    <title>Sunsail Hotel - Lamu Island, Kenya</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleHub - Premium Fashion</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header" id="header">
-        <div class="container">
-            <div class="logo">
-                <h1>Sunsail Hotel</h1>
-                <span>Lamu Island</span>
-            </div>
-            <nav>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <!-- <button id="theme-toggle" aria-label="Toggle dark mode" class="theme-toggle-btn">
-                    <i class="fas fa-moon"></i>
-                </button> -->
-                <ul class="nav-menu">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#rooms">Rooms</a></li>
-                    <li><a href="#dining">Dining</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" class="btn btn-small">Book Now</a></li>
-                </ul>
-            </nav>
+  <div class="announcement-bar">
+    <div class="container">
+      <p>Free shipping on all orders over $100</p>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <h1>STYLEHUB</h1>
         </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="hero-slider">
-                <div class="hero-slide active" style="background-image: url('images/sunsail-exterior.png');">
-                    <div class="hero-content">
-                        <h2>Welcome to Sunsail Hotel</h2>
-                        <p>Experience the magic of Lamu Island</p>
-                        <a href="#rooms" class="btn btn-primary">Explore Our Rooms</a>
-                    </div>
-                </div>
-                <div class="hero-slide" style="background-image: url('images/sunsail-evening.png');">
-                    <div class="hero-content">
-                        <h2>Coastal Paradise</h2>
-                        <p>Relax in our beautiful surroundings</p>
-                        <a href="#about" class="btn btn-primary">Discover More</a>
-                    </div>
-                </div>
-                <div class="hero-slide" style="background-image: url('images/sunsail-verandah.png');">
-                    <div class="hero-content">
-                        <h2>Traditional Swahili Charm</h2>
-                        <p>Authentic coastal architecture and hospitality</p>
-                        <a href="#contact" class="btn btn-primary">Book Your Stay</a>
-                    </div>
-                </div>
-                <div class="hero-controls">
-                    <button class="prev-btn" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
-                    <div class="dots">
-                        <span class="dot active" data-index="0"></span>
-                        <span class="dot" data-index="1"></span>
-                        <span class="dot" data-index="2"></span>
-                    </div>
-                    <button class="next-btn" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Welcome Section -->
-        <section class="welcome">
-            <div class="container">
-                <div class="welcome-content">
-                    <div class="section-header">
-                        <span class="subtitle">Welcome</span>
-                        <h2>Experience Lamu's Finest Hospitality</h2>
-                    </div>
-                    <p>Nestled on the shores of the historic Lamu Island, Sunsail Hotel offers a perfect blend of traditional Swahili architecture and modern comfort. Our beachfront location provides stunning views of the Indian Ocean and easy access to all the cultural treasures of Lamu Town, a UNESCO World Heritage site.</p>
-                    <div class="features">
-                        <div class="feature">
-                            <i class="fas fa-umbrella-beach"></i>
-                            <h3>Beachfront Location</h3>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-utensils"></i>
-                            <h3>Authentic Cuisine</h3>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-concierge-bell"></i>
-                            <h3>Exceptional Service</h3>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-wifi"></i>
-                            <h3>Free Wi-Fi</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about" id="about">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-image">
-                        <img src="images/sunsail-verandah.png" alt="Sunsail Hotel Verandah" class="img-fluid">
-                    </div>
-                    <div class="about-text">
-                        <div class="section-header">
-                            <span class="subtitle">About Us</span>
-                            <h2>A Piece of Paradise in Lamu</h2>
-                        </div>
-                        <p>Sunsail Hotel has been welcoming guests to Lamu Island for over two decades, offering an authentic coastal Kenyan experience with our warm hospitality and beautiful surroundings.</p>
-                        <p>Our hotel features traditional Swahili architecture with modern amenities, creating a comfortable and culturally rich environment for our guests. The spacious verandahs, intricate woodwork, and airy rooms reflect the unique heritage of Lamu Island.</p>
-                        <p>Located directly on the waterfront, we offer easy access to Lamu Town's historic sites, dhow cruises, and pristine beaches. Whether you're seeking adventure or relaxation, Sunsail Hotel provides the perfect base for your Lamu experience.</p>
-                        <a href="#" class="btn btn-secondary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Rooms Section -->
-        <section class="rooms" id="rooms">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="subtitle">Accommodation</span><br>
-                    <h2>Our Beautiful Rooms</h2>
-                    <p>Experience comfort with a touch of Swahili elegance</p>
-                </div>
-                <div class="rooms-grid">
-                    <div class="room-card">
-                        <div class="room-image">
-                            <img src="images/sunsail-room.png" alt="Standard Room at Sunsail Hotel">
-                            <div class="room-price">
-                                <span>From $80</span>
-                                <small>per night</small>
-                            </div>
-                        </div>
-                        <div class="room-content">
-                            <h3>Standard Room</h3>
-                            <p>Comfortable room with traditional Swahili decor, featuring a four-poster bed with mosquito netting and en-suite bathroom.</p>
-                            <ul class="room-features">
-                                <li><i class="fas fa-bed"></i> Queen Bed</li>
-                                <li><i class="fas fa-bath"></i> Private Bathroom</li>
-                                <li><i class="fas fa-wind"></i> Ceiling Fan</li>
-                                <li><i class="fas fa-wifi"></i> Free Wi-Fi</li>
-                            </ul>
-                            <a href="#" class="btn btn-outline">View Details</a>
-                        </div>
-                    </div>
-                    <div class="room-card">
-                        <div class="room-image">
-                            <img src="images/sunsail-room.png" alt="Deluxe Room at Sunsail Hotel">
-                            <div class="room-price">
-                                <span>From $120</span>
-                                <small>per night</small>
-                            </div>
-                        </div>
-                        <div class="room-content">
-                            <h3>Deluxe Room</h3>
-                            <p>Spacious room with sea view, featuring a king-size four-poster bed, traditional Swahili decor, and modern amenities.</p>
-                            <ul class="room-features">
-                                <li><i class="fas fa-bed"></i> King Bed</li>
-                                <li><i class="fas fa-bath"></i> Private Bathroom</li>
-                                <li><i class="fas fa-wind"></i> Air Conditioning</li>
-                                <li><i class="fas fa-wifi"></i> Free Wi-Fi</li>
-                            </ul>
-                            <a href="#" class="btn btn-outline">View Details</a>
-                        </div>
-                    </div>
-                    <div class="room-card">
-                        <div class="room-image">
-                            <img src="images/sunsail-room.png" alt="Family Suite at Sunsail Hotel">
-                            <div class="room-price">
-                                <span>From $160</span>
-                                <small>per night</small>
-                            </div>
-                        </div>
-                        <div class="room-content">
-                            <h3>Family Suite</h3>
-                            <p>Perfect for families, our suite features two bedrooms, a spacious living area, and a private balcony with ocean views.</p>
-                            <ul class="room-features">
-                                <li><i class="fas fa-bed"></i> Multiple Beds</li>
-                                <li><i class="fas fa-bath"></i> Private Bathroom</li>
-                                <li><i class="fas fa-wind"></i> Air Conditioning</li>
-                                <li><i class="fas fa-wifi"></i> Free Wi-Fi</li>
-                            </ul>
-                            <a href="#" class="btn btn-outline">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-5">
-                    <a href="room_details.html" class="btn btn-primary">View All Rooms</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Dining Section -->
-        <section class="dining" id="dining">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="subtitle">Culinary Experience</span><br>
-                    <h2>Exquisite Dining</h2>
-                    <p>Savor the flavors of coastal Kenyan cuisine</p>
-                </div>
-                <div class="dining-content">
-                    <div class="dining-text">
-                        <h3>Authentic Swahili Cuisine</h3>
-                        <p>At Sunsail Restaurant, we pride ourselves on serving authentic Swahili cuisine prepared with fresh, locally-sourced ingredients. Our menu features a variety of seafood dishes, traditional Kenyan specialties, and international favorites.</p>
-                        <p>Enjoy your meal in our beautiful dining area overlooking the ocean or on our spacious verandah. Our buffet service offers a wide selection of dishes to satisfy every palate.</p>
-                        <div class="dining-highlights">
-                            <div class="highlight">
-                                <i class="fas fa-fish"></i>
-                                <h4>Fresh Seafood</h4>
-                                <p>Caught daily by local fishermen</p>
-                            </div>
-                            <div class="highlight">
-                                <i class="fas fa-cocktail"></i>
-                                <h4>Tropical Drinks</h4>
-                                <p>Refreshing cocktails and juices</p>
-                            </div>
-                            <div class="highlight">
-                                <i class="fas fa-utensils"></i>
-                                <h4>Buffet Service</h4>
-                                <p>Variety of dishes to choose from</p>
-                            </div>
-                        </div>
-                        <a href="menu.html" class="btn btn-secondary mt-4">View Menu</a>
-                    </div>
-                    <div class="dining-images">
-                        <div class="dining-image-grid">
-                            <img src="images/sunsail-buffet.png" alt="Sunsail Hotel Buffet" class="img-fluid">
-                            <img src="images/sunsail-dining.png" alt="Sunsail Hotel Dining" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Menu Preview Section -->
-        <section class="menu-preview">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="subtitle">Our Menu</span><br>
-                    <h2>Sample Our Delicacies</h2>
-                </div>
-                <div class="menu-content">
-                    <div class="menu-image">
-                        <img src="images/sunsail-menu.png" alt="Sunsail Restaurant Menu" class="img-fluid">
-                    </div>
-                    <div class="menu-highlights">
-                        <div class="menu-category">
-                            <h3>Seafood Specialties</h3>
-                            <div class="menu-item">
-                                <div class="menu-item-name">Grilled Red Snapper</div>
-                                <div class="menu-item-price">KSh 1,200</div>
-                                <div class="menu-item-description">Fresh red snapper grilled to perfection, served with coconut rice and vegetables</div>
-                            </div>
-                            <div class="menu-item">
-                                <div class="menu-item-name">Prawn Curry</div>
-                                <div class="menu-item-price">KSh 1,400</div>
-                                <div class="menu-item-description">Succulent prawns in a rich coconut curry sauce, served with steamed rice</div>
-                            </div>
-                        </div>
-                        <div class="menu-category">
-                            <h3>Swahili Favorites</h3>
-                            <div class="menu-item">
-                                <div class="menu-item-name">Chicken Pilau</div>
-                                <div class="menu-item-price">KSh 800</div>
-                                <div class="menu-item-description">Fragrant rice cooked with chicken and traditional Swahili spices</div>
-                            </div>
-                            <div class="menu-item">
-                                <div class="menu-item-name">Beef Biriani</div>
-                                <div class="menu-item-price">KSh 900</div>
-                                <div class="menu-item-description">Tender beef cooked with aromatic spices and layered with basmati rice</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-5">
-                    <a href="menu.html" class="btn btn-primary">View Full Menu</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Section -->
-        <section class="gallery" id="gallery">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="subtitle">Photo Gallery</span><br>
-                    <h2>Experience Sunsail Hotel</h2>
-                </div>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="images/sunsail-exterior.png" alt="Sunsail Hotel Exterior" class="img-fluid">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>Hotel Exterior</h3>
-                                <p>View from the water</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="images/sunsail-verandah.png" alt="Sunsail Hotel Verandah" class="img-fluid">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>Verandah</h3>
-                                <p>Relax with ocean views</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="images/sunsail-room.png" alt="Sunsail Hotel Room" class="img-fluid">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>Guest Room</h3>
-                                <p>Traditional Swahili style</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="images/sunsail-buffet.png" alt="Sunsail Hotel Buffet" class="img-fluid">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>Buffet Selection</h3>
-                                <p>Variety of delicious dishes</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="images/sunsail-dining.png" alt="Sunsail Hotel Dining" class="img-fluid">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>Dining Experience</h3>
-                                <p>Buffet service</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="images/sunsail-evening.png" alt="Sunsail Hotel Evening" class="img-fluid">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>Evening Ambiance</h3>
-                                <p>Magical nights at Sunsail</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section class="testimonials">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="subtitle">Guest Reviews</span><br>
-                    <h2>What Our Guests Say</h2>
-                </div>
-                <div class="testimonial-slider">
-                    <div class="testimonial active">
-                        <div class="testimonial-content">
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <p>"An absolute gem in Lamu! The hotel's location right on the waterfront is perfect, and the traditional Swahili architecture is beautiful. The staff were incredibly friendly and the food was delicious. We especially enjoyed the seafood and the sunset views from the verandah."</p>
-                            <div class="testimonial-author">
-                                <h4>Sarah & David</h4>
-                                <span>United Kingdom</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <p>"We stayed at Sunsail Hotel for our honeymoon and couldn't have chosen a better place. The room was beautiful with its four-poster bed and ocean view. The staff arranged a dhow cruise for us which was magical. The authentic Swahili cuisine was a highlight of our stay."</p>
-                            <div class="testimonial-author">
-                                <h4>James & Maria</h4>
-                                <span>United States</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <p>"A wonderful cultural experience in the heart of Lamu. The hotel preserves the authentic Swahili style while providing modern comforts. The buffet dinner was excellent with a great variety of local dishes. The staff were knowledgeable about the area and helped us plan our activities."</p>
-                            <div class="testimonial-author">
-                                <h4>Amina & Omar</h4>
-                                <span>Kenya</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-controls">
-                        <button class="prev-btn" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
-                        <div class="dots">
-                            <span class="dot active" data-index="0"></span>
-                            <span class="dot" data-index="1"></span>
-                            <span class="dot" data-index="2"></span>
-                        </div>
-                        <button class="next-btn" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Location Section -->
-        <section class="location" id="contact">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="subtitle">Find Us</span><br>
-                    <h2>Our Location</h2>
-                </div>
-                <div class="location-content">
-                    <div class="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.6912733295494!2d40.90008167496799!3d-2.2685932977114605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1817193e98b62ffb%3A0xcac53df9a25d3982!2sLamu%20Sunsail%20Hotel%20%26%20Restaurant!5e0!3m2!1sen!2ske!4v1745791673704!5m2!1sen!2ske" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <div class="contact-info">
-                        <div class="info-card">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <h3>Address</h3>
-                            <p>Lamu Sunsail Hotel & Restaurant<br>Lamu Island, Lamu County<br>Kenya</p>
-                        </div>
-                        <div class="info-card">
-                            <i class="fas fa-phone-alt"></i>
-                            <h3>Phone</h3>
-                            <p>+254 722 123 456<br>+254 733 987 654</p>
-                        </div>
-                        <div class="info-card">
-                            <i class="fas fa-envelope"></i>
-                            <h3>Email</h3>
-                            <p>info@sunsailhotel.com<br>reservations@sunsailhotel.com</p>
-                        </div>
-                        <div class="info-card">
-                            <i class="fas fa-clock"></i>
-                            <h3>Reception Hours</h3>
-                            <p>24/7 Front Desk Service</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Form Section -->
-        <section class="contact-form">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="subtitle">Get in Touch</span><br>
-                    <h2>Send Us a Message</h2>
-                </div>
-                <div class="form-container">
-                    <form id="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <select id="subject" name="subject">
-                                    <option value="reservation">Reservation Inquiry</option>
-                                    <option value="information">General Information</option>
-                                    <option value="feedback">Feedback</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Experience the Magic of Lamu Island</h2>
-                    <p>Book your stay at Sunsail Hotel and create unforgettable memories</p>
-                    <a href="#" class="btn btn-light">Book Now</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <h3>Sunsail Hotel</h3>
-                        <span>Lamu Island</span>
-                    </div>
-                    <p>Experience the charm and beauty of Lamu Island at our traditional Swahili-style hotel, offering comfortable accommodation, delicious cuisine, and warm hospitality.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#rooms">Rooms</a></li>
-                        <li><a href="#dining">Dining</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> Lamu Island, Lamu County, Kenya</li>
-                        <li><i class="fas fa-phone-alt"></i> +254 722 123 456</li>
-                        <li><i class="fas fa-envelope"></i> info@sunsailhotel.com</li>
-                        <li><i class="fas fa-clock"></i> 24/7 Front Desk Service</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
-                    </div>
-                    <div class="newsletter">
-                        <h4>Subscribe to our newsletter</h4>
-                        <form id="newsletter-form">
-                            <input type="email" placeholder="Your email" required>
-                            <button type="submit" class="btn btn-small">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Sunsail Hotel. All rights reserved.</p>
-            </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">HOME</a></li>
+            <li><a href="shop.html">MEN</a></li>
+            <li><a href="shop.html">WOMEN</a></li>
+            <li><a href="shop.html">KIDS</a></li>
+            <li><a href="shop.html">COLLECTIONS</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+          <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-bag"></i><span id="cart-count">0</span></a>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </header>
 
-    <script src="js/script.js"></script>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="mega-title">ELEVATE<br>YOUR STYLE</h1>
+          <p class="hero-subtitle">THE NEW PREMIUM COLLECTION 2025</p>
+          <div class="hero-cta">
+            <a href="shop.html" class="btn btn-primary">SHOP NOW</a>
+            <a href="#" class="btn btn-outline">EXPLORE</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+          <img src="/images/luxury-streetwear.png" alt="Model wearing premium collection">
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+      <div class="container">
+        <div class="categories-grid">
+          <a href="shop.html" class="category-card">
+            <div class="category-image">
+              <img src="/images/mens-formal.png" alt="Men's Collection">
+            </div>
+            <h3>MEN</h3>
+          </a>
+          <a href="shop.html" class="category-card">
+            <div class="category-image">
+              <img src="/images/womens-business.png" alt="Women's Collection">
+            </div>
+            <h3>WOMEN</h3>
+          </a>
+          <a href="shop.html" class="category-card">
+            <div class="category-image">
+              <img src="/images/kids-fashion.png" alt="Kids' Collection">
+            </div>
+            <h3>KIDS</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">FEATURED PRODUCTS</h2>
+          <a href="shop.html" class="view-all">VIEW ALL</a>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="/images/streetwear-zebra.png" alt="Premium Jacket">
+              <div class="product-tag">New</div>
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Zebra Tech Jacket</h3>
+              <p class="product-price">$129.99</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="/images/luxury-streetwear.png" alt="Tech Hoodie">
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Luxury Fleece Jacket</h3>
+              <p class="product-price">$189.99</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="/images/mens-formal.png" alt="Performance Tee">
+              <div class="product-tag">Trending</div>
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Premium Formal Suit</h3>
+              <p class="product-price">$249.99</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="/images/womens-business.png" alt="Cargo Pants">
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Women's Business Suit</h3>
+              <p class="product-price">$199.99</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+      <div class="container">
+        <div class="promo-content">
+          <h2>NEW SEASON ARRIVALS</h2>
+          <p>Discover the latest trends for Spring/Summer 2025</p>
+          <a href="shop.html" class="btn btn-light">SHOP NOW</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Products -->
+    <section class="trending-products">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">TRENDING NOW</h2>
+          <a href="shop.html" class="view-all">VIEW ALL</a>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="/images/luxury-streetwear.png" alt="Crossbody Bag">
+              <div class="product-tag">Limited</div>
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Designer Pattern Jacket</h3>
+              <p class="product-price">$159.99</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="/images/streetwear-zebra.png" alt="Performance Jacket">
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Zebra Pattern Set</h3>
+              <p class="product-price">$219.99</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="/images/kids-fashion.png" alt="Striped Sweater">
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Kids Casual Set</h3>
+              <p class="product-price">$69.99</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="/images/womens-business.png" alt="Utility Vest">
+              <div class="product-tag">Sale</div>
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Women's Business Suit</h3>
+              <p class="product-price"><span class="original-price">$229.99</span> $199.99</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-shipping-fast"></i>
+            </div>
+            <h3>FREE SHIPPING</h3>
+            <p>On all orders over $100</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-undo"></i>
+            </div>
+            <h3>EASY RETURNS</h3>
+            <p>30-day return policy</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>SECURE PAYMENT</h3>
+            <p>100% secure checkout</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>CUSTOMER SUPPORT</h3>
+            <p>24/7 dedicated support</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2 class="section-title">JOIN OUR COMMUNITY</h2>
+          <p>Sign up for updates on the latest products, exclusive offers, and community events.</p>
+          <form id="newsletter-form" class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit" class="btn">JOIN</button>
+          </form>
+          <div id="newsletter-message"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>STYLEHUB</h3>
+          <p>Premium fashion for the modern individual.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>SHOP</h3>
+          <ul>
+            <li><a href="shop.html">Men</a></li>
+            <li><a href="shop.html">Women</a></li>
+            <li><a href="shop.html">Kids</a></li>
+            <li><a href="shop.html">Collections</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>HELP</h3>
+          <ul>
+            <li><a href="#">Customer Service</a></li>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Shipping Information</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>ABOUT</h3>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Corporate Responsibility</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 StyleHub. All rights reserved.</p>
+        <div class="payment-methods">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-amex"></i>
+          <i class="fab fa-cc-paypal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scroll-top" class="scroll-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Newsletter form submission
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('input[type="email"]').value;
+      const messageElement = document.getElementById('newsletter-message');
+      
+      // Simulate form submission
+      messageElement.textContent = `Thank you! ${email} has been subscribed.`;
+      messageElement.classList.add('success');
+      this.reset();
+      
+      // Clear message after 3 seconds
+      setTimeout(() => {
+        messageElement.textContent = '';
+        messageElement.classList.remove('success');
+      }, 3000);
+    });
+
+    // Product quick view and wishlist buttons
+    document.querySelectorAll('.quick-view, .add-to-wishlist').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Just for demo purposes
+        alert('Feature coming soon!');
+      });
+    });
+  </script>
 </body>
 </html>
