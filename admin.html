@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Inkwell</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>Inkwell</h1>
+            </div>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+            <nav>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" id="categories-dropdown-toggle">Categories</a>
+                        <ul class="dropdown-menu" id="categories-dropdown">
+                            <!-- Categories will be loaded here via JavaScript -->
+                        </ul>
+                    </li>
+                    <li><a href="bookmarks.html">Bookmarks</a></li>
+                    <li><a href="admin.html" class="active">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="admin-dashboard">
+            <div class="admin-sidebar">
+                <ul class="admin-menu">
+                    <li><a href="#posts-section" class="active">Posts</a></li>
+                    <li><a href="#categories-section">Categories</a></li>
+                    <li><a href="#comments-section">Comments</a></li>
+                    <li><a href="#analytics-section">Analytics</a></li>
+                    <li><a href="#settings-section">Settings</a></li>
+                </ul>
+            </div>
+            <div class="admin-content">
+                <!-- Posts Section -->
+                <div id="posts-section" class="admin-section active">
+                    <h2>Manage Posts</h2>
+                    <div id="post-form-container" class="admin-form">
+                        <h3 id="post-form-title">Create New Post</h3>
+                        <form id="post-form">
+                            <input type="hidden" id="post-id">
+                            <div class="form-group">
+                                <label for="post-title">Title</label>
+                                <input type="text" id="post-title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="post-author">Author</label>
+                                <input type="text" id="post-author" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="post-category">Category</label>
+                                <select id="post-category" required>
+                                    <!-- Categories will be loaded here via JavaScript -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="post-image">Featured Image URL</label>
+                                <input type="url" id="post-image" placeholder="https://example.com/image.jpg">
+                            </div>
+                            <div class="form-group">
+                                <label for="post-excerpt">Excerpt (optional)</label>
+                                <textarea id="post-excerpt" rows="2"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="post-content">Content</label>
+                                <div class="editor-toolbar">
+                                    <button type="button" data-format="bold" title="Bold">B</button>
+                                    <button type="button" data-format="italic" title="Italic">I</button>
+                                    <button type="button" data-format="heading" title="Heading">H</button>
+                                    <button type="button" data-format="link" title="Link">🔗</button>
+                                    <button type="button" data-format="list" title="List">•</button>
+                                </div>
+                                <textarea id="post-content" rows="10" required></textarea>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="post-featured">
+                                <label for="post-featured">Featured Post</label>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="submit" id="post-submit-btn" class="btn btn-primary">Publish Post</button>
+                                <button type="button" id="post-cancel-btn" class="btn" style="display: none;">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="admin-table-container">
+                        <div class="table-actions">
+                            <input type="text" placeholder="Search posts..." id="posts-search">
+                            <select id="posts-filter">
+                                <option value="">All Posts</option>
+                                <option value="featured">Featured Posts</option>
+                                <!-- Categories will be added here via JavaScript -->
+                            </select>
+                        </div>
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Date</th>
+                                    <th>Featured</th>
+                                    <th>Views</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-posts-list">
+                                <!-- Posts will be loaded here via JavaScript -->
+                                <tr>
+                                    <td colspan="6" class="loading-cell">
+                                        <div class="loading">
+                                            <div class="loading-spinner"></div>
+                                            <p>Loading posts...</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Categories Section -->
+                <div id="categories-section" class="admin-section">
+                    <h2>Manage Categories</h2>
+                    <div class="admin-form">
+                        <h3>Add New Category</h3>
+                        <form id="category-form">
+                            <input type="hidden" id="category-id">
+                            <div class="form-group">
+                                <label for="category-name">Name</label>
+                                <input type="text" id="category-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="category-description">Description</label>
+                                <textarea id="category-description" rows="2"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="category-image">Image URL</label>
+                                <input type="url" id="category-image" placeholder="https://example.com/image.jpg">
+                            </div>
+                            <div class="form-buttons">
+                                <button type="submit" id="category-submit-btn" class="btn btn-primary">Add Category</button>
+                                <button type="button" id="category-cancel-btn" class="btn" style="display: none;">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="admin-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Posts</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-categories-list">
+                                <!-- Categories will be loaded here via JavaScript -->
+                                <tr>
+                                    <td colspan="4" class="loading-cell">
+                                        <div class="loading">
+                                            <div class="loading-spinner"></div>
+                                            <p>Loading categories...</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Comments Section -->
+                <div id="comments-section" class="admin-section">
+                    <h2>Manage Comments</h2>
+                    <div class="admin-table-container">
+                        <div class="table-actions">
+                            <select id="comment-filter">
+                                <option value="all">All Comments</option>
+                                <option value="approved">Approved</option>
+                                <option value="pending">Pending</option>
+                            </select>
+                        </div>
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Author</th>
+                                    <th>Comment</th>
+                                    <th>Post</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-comments-list">
+                                <!-- Comments will be loaded here via JavaScript -->
+                                <tr>
+                                    <td colspan="6" class="loading-cell">
+                                        <div class="loading">
+                                            <div class="loading-spinner"></div>
+                                            <p>Loading comments...</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Analytics Section -->
+                <div id="analytics-section" class="admin-section">
+                    <h2>Analytics</h2>
+                    <div class="analytics-dashboard">
+                        <div class="analytics-cards">
+                            <div class="admin-form">
+                                <h3>Total Posts</h3>
+                                <p id="analytics-total-posts" class="analytics-number">0</p>
+                            </div>
+                            <div class="admin-form">
+                                <h3>Total Views</h3>
+                                <p id="analytics-total-views" class="analytics-number">0</p>
+                            </div>
+                            <div class="admin-form">
+                                <h3>Total Comments</h3>
+                                <p id="analytics-total-comments" class="analytics-number">0</p>
+                            </div>
+                            <div class="admin-form">
+                                <h3>Total Categories</h3>
+                                <p id="analytics-total-categories" class="analytics-number">0</p>
+                            </div>
+                        </div>
+                        <div class="admin-form">
+                            <h3>Posts by Category</h3>
+                            <div id="category-chart">
+                                <!-- Category chart will be loaded here via JavaScript -->
+                                <div class="loading">
+                                    <div class="loading-spinner"></div>
+                                    <p>Loading chart...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="admin-form">
+                            <h3>Popular Posts</h3>
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Views</th>
+                                        <th>Comments</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="popular-posts-list">
+                                    <!-- Popular posts will be loaded here via JavaScript -->
+                                    <tr>
+                                        <td colspan="3" class="loading-cell">
+                                            <div class="loading">
+                                                <div class="loading-spinner"></div>
+                                                <p>Loading popular posts...</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Section -->
+                <div id="settings-section" class="admin-section">
+                    <h2>Settings</h2>
+                    <div class="admin-form">
+                        <h3>Blog Settings</h3>
+                        <form id="settings-form">
+                            <div class="form-group">
+                                <label for="blog-title">Blog Title</label>
+                                <input type="text" id="blog-title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="blog-description">Blog Description</label>
+                                <textarea id="blog-description" rows="2" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="posts-per-page">Posts Per Page</label>
+                                <input type="number" id="posts-per-page" min="1" max="20" required>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="comments-enabled">
+                                <label for="comments-enabled">Enable Comments</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="moderate-comments">
+                                <label for="moderate-comments">Moderate Comments</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Settings</button>
+                        </form>
+                    </div>
+                    <div class="admin-form">
+                        <h3>Theme Settings</h3>
+                        <form id="theme-settings-form">
+                            <div class="form-group">
+                                <label for="primary-color">Primary Color</label>
+                                <input type="color" id="primary-color">
+                            </div>
+                            <div class="form-group">
+                                <label for="secondary-color">Secondary Color</label>
+                                <input type="color" id="secondary-color">
+                            </div>
+                            <div class="form-group">
+                                <label for="accent-color">Accent Color</label>
+                                <input type="color" id="accent-color">
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="dark-mode-default">
+                                <label for="dark-mode-default">Dark Mode by Default</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Theme Settings</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Inkwell</h2>
+                    <p>A modern blog for modern ideas. Discover the latest trends, tips, and insights in web development, design, and technology.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="bookmarks.html">Bookmarks</a></li>
+                        <li><a href="admin.html">Admin</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-categories">
+                    <h3>Categories</h3>
+                    <ul id="footer-categories-list">
+                        <!-- Categories will be loaded here via JavaScript -->
+                        <li><a href="#">Loading categories...</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Subscribe to Newsletter</h3>
+                    <p>Get the latest articles and news delivered to your inbox weekly.</p>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Inkwell. All rights reserved. Designed with <span style="color: var(--danger-color);">❤</span> for modern web.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Confirm Action</h3>
+                <button id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modal-message">Are you sure you want to perform this action?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="modal-cancel" class="btn">Cancel</button>
+                <button id="modal-confirm" class="btn btn-danger">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">
+        <p id="toast-message"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,375 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StyleHub - Premium Fashion</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inkwell | Modern Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <meta property="og:title" content="Inkwell | Modern Blog">
+    <meta property="og:description" content="A modern blog for modern ideas">
+    <meta property="og:type" content="website">
 </head>
 <body>
-  <div class="announcement-bar">
-    <div class="container">
-      <p>Free shipping on all orders over $100</p>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>Inkwell</h1>
+            </div>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+            <nav>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#" id="categories-dropdown-toggle">Categories</a>
+                        <ul class="dropdown-menu" id="categories-dropdown">
+                            <!-- Categories will be loaded here via JavaScript -->
+                        </ul>
+                    </li>
+                    <li><a href="admin.html">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-slider" id="hero-slider">
+            <!-- Hero slides will be loaded here via JavaScript -->
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>Loading featured content...</p>
+            </div>
+        </div>
+        <div class="hero-controls">
+            <button id="hero-prev" class="hero-control-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button id="hero-next" class="hero-control-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+    </section>
+
+    <div class="search-container container">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search articles...">
+            <button id="search-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- Newsletter Banner -->
+        <section class="newsletter-banner">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest articles and news delivered to your inbox weekly.</p>
+                <form id="newsletter-banner-form" class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="newsletter-image">
+                <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Newsletter">
+            </div>
+        </section>
+
+        <!-- Featured Posts -->
+        <section class="featured-posts">
+            <h2>Featured Posts</h2>
+            <div id="featured-posts-container" class="featured-posts-grid">
+                <!-- Featured posts will be loaded here via JavaScript -->
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading featured posts...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-section">
+            <h2>Browse by Category</h2>
+            <div id="categories-container" class="categories-grid">
+                <!-- Categories will be loaded here via JavaScript -->
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading categories...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Posts -->
+        <section class="latest-posts">
+            <div class="section-header">
+                <h2>Latest Articles</h2>
+                <div class="filter-container">
+                    <select id="category-filter">
+                        <option value="">All Categories</option>
+                        <!-- Categories will be loaded here via JavaScript -->
+                    </select>
+                </div>
+            </div>
+            <div id="posts-container" class="posts-grid">
+                <!-- Posts will be loaded here via JavaScript -->
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading posts...</p>
+                </div>
+            </div>
+            <div class="load-more-container">
+                <button id="load-more-btn" class="btn btn-primary">Load More</button>
+            </div>
+        </section>
+
+        <!-- Popular Posts -->
+        <section class="popular-posts">
+            <h2>Popular Posts</h2>
+            <div id="popular-posts-container" class="popular-posts-list">
+                <!-- Popular posts will be loaded here via JavaScript -->
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading popular posts...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Comments -->
+        <section class="recent-comments">
+            <h2>Recent Comments</h2>
+            <div id="recent-comments-container" class="recent-comments-list">
+                <!-- Recent comments will be loaded here via JavaScript -->
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading recent comments...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h2>Inkwell</h2>
+        <p>A modern blog for modern ideas. Discover the latest trends, tips, and insights in web development, design, and technology.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="bookmarks.html">Bookmarks</a></li>
+          <li><a href="admin.html">Admin</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-categories">
+        <h3>Categories</h3>
+        <ul id="footer-categories-list">
+          <!-- Categories will be loaded here via JavaScript -->
+          <li><a href="#">Loading categories...</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h3>Subscribe to Newsletter</h3>
+        <p>Get the latest articles and news delivered to your inbox weekly.</p>
+        <form id="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Inkwell. All rights reserved. Designed with <span style="color: var(--danger-color);">❤</span> for modern web.</p>
     </div>
   </div>
+</footer>
 
-  <header>
-    <div class="container">
-      <div class="header-inner">
-        <div class="logo">
-          <h1>STYLEHUB</h1>
+    <div id="search-results" class="search-results-modal">
+        <div class="search-results-content">
+            <div class="search-results-header">
+                <h3>Search Results</h3>
+                <button id="close-search-results">×</button>
+            </div>
+            <div id="search-results-container">
+                <!-- Search results will be loaded here via JavaScript -->
+            </div>
         </div>
-        <nav>
-          <ul class="nav-links">
-            <li><a href="index.html" class="active">HOME</a></li>
-            <li><a href="shop.html">MEN</a></li>
-            <li><a href="shop.html">WOMEN</a></li>
-            <li><a href="shop.html">KIDS</a></li>
-            <li><a href="shop.html">COLLECTIONS</a></li>
-          </ul>
-        </nav>
-        <div class="header-actions">
-          <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
-          <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-bag"></i><span id="cart-count">0</span></a>
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div>
     </div>
-  </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1 class="mega-title">ELEVATE<br>YOUR STYLE</h1>
-          <p class="hero-subtitle">THE NEW PREMIUM COLLECTION 2025</p>
-          <div class="hero-cta">
-            <a href="shop.html" class="btn btn-primary">SHOP NOW</a>
-            <a href="#" class="btn btn-outline">EXPLORE</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <div class="play-button">
-            <i class="fas fa-play"></i>
-          </div>
-          <img src="/images/luxury-streetwear.png" alt="Model wearing premium collection">
-        </div>
-      </div>
-    </section>
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
 
-    <!-- Categories Section -->
-    <section class="categories">
-      <div class="container">
-        <div class="categories-grid">
-          <a href="shop.html" class="category-card">
-            <div class="category-image">
-              <img src="/images/mens-formal.png" alt="Men's Collection">
-            </div>
-            <h3>MEN</h3>
-          </a>
-          <a href="shop.html" class="category-card">
-            <div class="category-image">
-              <img src="/images/womens-business.png" alt="Women's Collection">
-            </div>
-            <h3>WOMEN</h3>
-          </a>
-          <a href="shop.html" class="category-card">
-            <div class="category-image">
-              <img src="/images/kids-fashion.png" alt="Kids' Collection">
-            </div>
-            <h3>KIDS</h3>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section class="featured-products">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">FEATURED PRODUCTS</h2>
-          <a href="shop.html" class="view-all">VIEW ALL</a>
-        </div>
-        <div class="products-grid">
-          <div class="product-card">
-            <div class="product-image">
-              <img src="/images/streetwear-zebra.png" alt="Premium Jacket">
-              <div class="product-tag">New</div>
-              <div class="product-actions">
-                <button class="quick-view"><i class="fas fa-eye"></i></button>
-                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3>Zebra Tech Jacket</h3>
-              <p class="product-price">$129.99</p>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-image">
-              <img src="/images/luxury-streetwear.png" alt="Tech Hoodie">
-              <div class="product-actions">
-                <button class="quick-view"><i class="fas fa-eye"></i></button>
-                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3>Luxury Fleece Jacket</h3>
-              <p class="product-price">$189.99</p>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-image">
-              <img src="/images/mens-formal.png" alt="Performance Tee">
-              <div class="product-tag">Trending</div>
-              <div class="product-actions">
-                <button class="quick-view"><i class="fas fa-eye"></i></button>
-                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3>Premium Formal Suit</h3>
-              <p class="product-price">$249.99</p>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-image">
-              <img src="/images/womens-business.png" alt="Cargo Pants">
-              <div class="product-actions">
-                <button class="quick-view"><i class="fas fa-eye"></i></button>
-                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3>Women's Business Suit</h3>
-              <p class="product-price">$199.99</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Promo Banner -->
-    <section class="promo-banner">
-      <div class="container">
-        <div class="promo-content">
-          <h2>NEW SEASON ARRIVALS</h2>
-          <p>Discover the latest trends for Spring/Summer 2025</p>
-          <a href="shop.html" class="btn btn-light">SHOP NOW</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Trending Products -->
-    <section class="trending-products">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">TRENDING NOW</h2>
-          <a href="shop.html" class="view-all">VIEW ALL</a>
-        </div>
-        <div class="products-grid">
-          <div class="product-card">
-            <div class="product-image">
-              <img src="/images/luxury-streetwear.png" alt="Crossbody Bag">
-              <div class="product-tag">Limited</div>
-              <div class="product-actions">
-                <button class="quick-view"><i class="fas fa-eye"></i></button>
-                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3>Designer Pattern Jacket</h3>
-              <p class="product-price">$159.99</p>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-image">
-              <img src="/images/streetwear-zebra.png" alt="Performance Jacket">
-              <div class="product-actions">
-                <button class="quick-view"><i class="fas fa-eye"></i></button>
-                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3>Zebra Pattern Set</h3>
-              <p class="product-price">$219.99</p>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-image">
-              <img src="/images/kids-fashion.png" alt="Striped Sweater">
-              <div class="product-actions">
-                <button class="quick-view"><i class="fas fa-eye"></i></button>
-                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3>Kids Casual Set</h3>
-              <p class="product-price">$69.99</p>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-image">
-              <img src="/images/womens-business.png" alt="Utility Vest">
-              <div class="product-tag">Sale</div>
-              <div class="product-actions">
-                <button class="quick-view"><i class="fas fa-eye"></i></button>
-                <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3>Women's Business Suit</h3>
-              <p class="product-price"><span class="original-price">$229.99</span> $199.99</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-      <div class="container">
-        <div class="features-grid">
-          <div class="feature">
-            <div class="feature-icon">
-              <i class="fas fa-shipping-fast"></i>
-            </div>
-            <h3>FREE SHIPPING</h3>
-            <p>On all orders over $100</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon">
-              <i class="fas fa-undo"></i>
-            </div>
-            <h3>EASY RETURNS</h3>
-            <p>30-day return policy</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <h3>SECURE PAYMENT</h3>
-            <p>100% secure checkout</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon">
-              <i class="fas fa-headset"></i>
-            </div>
-            <h3>CUSTOMER SUPPORT</h3>
-            <p>24/7 dedicated support</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Newsletter Signup -->
-    <section class="newsletter">
-      <div class="container">
-        <div class="newsletter-content">
-          <h2 class="section-title">JOIN OUR COMMUNITY</h2>
-          <p>Sign up for updates on the latest products, exclusive offers, and community events.</p>
-          <form id="newsletter-form" class="newsletter-form">
-            <input type="email" placeholder="Your email address" required>
-            <button type="submit" class="btn">JOIN</button>
-          </form>
-          <div id="newsletter-message"></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>STYLEHUB</h3>
-          <p>Premium fashion for the modern individual.</p>
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-          </div>
-        </div>
-        <div class="footer-section">
-          <h3>SHOP</h3>
-          <ul>
-            <li><a href="shop.html">Men</a></li>
-            <li><a href="shop.html">Women</a></li>
-            <li><a href="shop.html">Kids</a></li>
-            <li><a href="shop.html">Collections</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>HELP</h3>
-          <ul>
-            <li><a href="#">Customer Service</a></li>
-            <li><a href="#">Track Order</a></li>
-            <li><a href="#">Returns & Exchanges</a></li>
-            <li><a href="#">Shipping Information</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>ABOUT</h3>
-          <ul>
-            <li><a href="#">Our Story</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Corporate Responsibility</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 StyleHub. All rights reserved.</p>
-        <div class="payment-methods">
-          <i class="fab fa-cc-visa"></i>
-          <i class="fab fa-cc-mastercard"></i>
-          <i class="fab fa-cc-amex"></i>
-          <i class="fab fa-cc-paypal"></i>
-        </div>
-      </div>
+    <div id="toast" class="toast">
+        <p id="toast-message"></p>
     </div>
-  </footer>
 
-  <button id="scroll-top" class="scroll-top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <script src="js/script.js"></script>
-  <script>
-    // Newsletter form submission
-    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = this.querySelector('input[type="email"]').value;
-      const messageElement = document.getElementById('newsletter-message');
-      
-      // Simulate form submission
-      messageElement.textContent = `Thank you! ${email} has been subscribed.`;
-      messageElement.classList.add('success');
-      this.reset();
-      
-      // Clear message after 3 seconds
-      setTimeout(() => {
-        messageElement.textContent = '';
-        messageElement.classList.remove('success');
-      }, 3000);
-    });
-
-    // Product quick view and wishlist buttons
-    document.querySelectorAll('.quick-view, .add-to-wishlist').forEach(button => {
-      button.addEventListener('click', function(e) {
-        e.preventDefault();
-        // Just for demo purposes
-        alert('Feature coming soon!');
-      });
-    });
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>

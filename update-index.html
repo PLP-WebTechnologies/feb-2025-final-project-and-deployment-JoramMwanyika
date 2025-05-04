@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inkwell | Modern Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="enhanced-styles.css">
+    <link rel="stylesheet" href="header-styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <meta property="og:title" content="Inkwell | Modern Blog">
+    <meta property="og:description" content="A modern blog for modern ideas">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <!-- Header Container - Will be populated by header-integration.js -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-slider" id="hero-slider">
+            <!-- Hero slides will be loaded here via JavaScript -->
+            <div class="loading-indicator">
+                <div class="loading-spinner"></div>
+                <p>Loading featured content...</p>
+            </div>
+        </div>
+        <div class="hero-controls">
+            <button id="hero-prev" class="hero-control-btn" aria-label="Previous slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button id="hero-next" class="hero-control-btn" aria-label="Next slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+    </section>
+
+    <div class="search-container container">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search articles...">
+            <button id="search-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- Newsletter Banner -->
+        <section class="newsletter-banner">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest articles and news delivered to your inbox weekly.</p>
+                <form id="newsletter-banner-form" class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="newsletter-image">
+                <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Newsletter">
+            </div>
+        </section>
+
+        <!-- Featured Posts -->
+        <section class="featured-posts">
+            <h2>Featured Posts</h2>
+            <div id="featured-posts-container" class="featured-posts-grid">
+                <!-- Featured posts will be loaded here via JavaScript -->
+                <div class="loading-indicator">
+                    <div class="loading-spinner"></div>
+                    <p>Loading featured posts...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-section">
+            <h2>Browse by Category</h2>
+            <div id="categories-container" class="categories-grid">
+                <!-- Categories will be loaded here via JavaScript -->
+                <div class="loading-indicator">
+                    <div class="loading-spinner"></div>
+                    <p>Loading categories...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Posts -->
+        <section class="latest-posts">
+            <div class="section-header">
+                <h2>Latest Articles</h2>
+                <div class="filter-container">
+                    <div id="category-filter">
+                        <!-- Category filter will be loaded here via JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <div id="posts-container" class="posts-grid">
+                <!-- Posts will be loaded here via JavaScript -->
+                <div class="loading-indicator">
+                    <div class="loading-spinner"></div>
+                    <p>Loading posts...</p>
+                </div>
+            </div>
+            <div class="load-more-container">
+                <button id="load-more-btn" class="btn btn-primary">Load More</button>
+            </div>
+        </section>
+
+        <!-- Popular Posts -->
+        <section class="popular-posts">
+            <h2>Popular Posts</h2>
+            <div id="popular-posts-container" class="popular-posts-list">
+                <!-- Popular posts will be loaded here via JavaScript -->
+                <div class="loading-indicator">
+                    <div class="loading-spinner"></div>
+                    <p>Loading popular posts...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Comments -->
+        <section class="recent-comments">
+            <h2>Recent Comments</h2>
+            <div id="recent-comments-container" class="recent-comments-list">
+                <!-- Recent comments will be loaded here via JavaScript -->
+                <div class="loading-indicator">
+                    <div class="loading-spinner"></div>
+                    <p>Loading recent comments...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Container - Will be populated by header-integration.js -->
+    <div id="footer-container"></div>
+
+    <div id="search-results" class="search-results-modal">
+        <div class="search-results-content">
+            <div class="search-results-header">
+                <h3>Search Results</h3>
+                <button id="close-search-results">×</button>
+            </div>
+            <div id="search-results-container">
+                <!-- Search results will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <div id="toast" class="toast">
+        <p id="toast-message"></p>
+    </div>
+
+    <!-- Overlay for mobile menu -->
+    <div id="menu-overlay" class="menu-overlay"></div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="header-integration.js"></script>
+</body>
+</html>

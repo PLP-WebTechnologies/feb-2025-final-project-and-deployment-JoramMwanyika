@@ -1,0 +1,138 @@
+<!-- Header Component for Inkwell Blog -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/images/logo.png" alt="Inkwell Blog" class="logo-image">
+          <span class="logo-text">Inkwell</span>
+        </a>
+      </div>
+      
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle">Categories</a>
+            <ul class="dropdown-menu" id="header-categories-list">
+              <!-- Categories will be loaded dynamically -->
+              <li class="loading">Loading categories...</li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="bookmarks.html" class="nav-link">Bookmarks</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <form id="search-form" class="search-form">
+          <div class="search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Search articles..." aria-label="Search articles">
+            <button type="submit" id="search-btn" class="search-btn" aria-label="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+          </div>
+        </form>
+        
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle dark mode">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span class="menu-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu-header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/images/logo.png" alt="Inkwell Blog" class="logo-image">
+          <span class="logo-text">Inkwell</span>
+        </a>
+      </div>
+      <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close mobile menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    
+    <div class="mobile-search">
+      <form id="mobile-search-form" class="search-form">
+        <div class="search-container">
+          <input type="text" id="mobile-search-input" class="search-input" placeholder="Search articles..." aria-label="Search articles">
+          <button type="submit" id="mobile-search-btn" class="search-btn" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+        </div>
+      </form>
+    </div>
+    
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li class="mobile-nav-item mobile-dropdown">
+          <a href="#" class="mobile-nav-link mobile-dropdown-toggle">Categories</a>
+          <div id="mobile-category-menu" class="mobile-dropdown-content">
+            <!-- Categories will be loaded dynamically -->
+            <p class="loading">Loading categories...</p>
+          </div>
+        </li>
+        <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+        <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li class="mobile-nav-item"><a href="bookmarks.html" class="mobile-nav-link">Bookmarks</a></li>
+      </ul>
+    </nav>
+    
+    <div class="mobile-footer">
+      <button id="mobile-theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <span>Toggle Dark Mode</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Initialize header functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    
+    if (mobileMenuToggle && mobileMenu && mobileMenuClose) {
+      mobileMenuToggle.addEventListener('click', function() {
+        mobileMenu.classList.add('active');
+        document.body.classList.add('menu-open');
+      });
+      
+      mobileMenuClose.addEventListener('click', function() {
+        mobileMenu.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      });
+    }
+    
+    // Load header categories
+    const headerCategoriesList = document.getElementById('header-categories-list');
+    if (headerCategoriesList) {
+      try {
+        const categories = getAllCategories();
+        
+        if (categories && categories.length > 0) {
+          headerCategoriesList.innerHTML = categories.map(category => `
+            <li><a href="index.html?category=${encodeURIComponent(category)}" class="dropdown-item">${category}</a></li>
+          `).join('');
+        } else {
+          headerCategoriesList.innerHTML = '<li><span class="dropdown-item">No categories available</span></li>';
+        }
+      } catch (error) {
+        console.error('Error loading header categories:', error);
+        headerCategoriesList.innerHTML = '<li><span class="dropdown-item">Failed to load categories</span></li>';
+      }
+    }
+  });
+</script>
